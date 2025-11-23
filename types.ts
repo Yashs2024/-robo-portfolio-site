@@ -38,3 +38,10 @@ export interface ChartDataPoint {
   A: number; // Proficiency level (0-100)
   fullMark: number;
 }
+
+export interface Achievement {
+  id: string;
+  title: string;
+  description: string;
+  icon: 'Award' | 'Code' | 'GraduationCap' | 'Trophy';
+}

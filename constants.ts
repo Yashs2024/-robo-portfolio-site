@@ -1,4 +1,4 @@
-import { Project, Experience, Education, SkillCategory, ChartDataPoint } from './types';
+import { Project, Experience, Education, SkillCategory, ChartDataPoint, Achievement } from './types';
 
 export const PERSONAL_INFO = {
   name: "Yash Surve",
@@ -16,11 +16,11 @@ export const PERSONAL_INFO = {
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: "Programming",
-    skills: ["Python", "MATLAB", "ROS 2", "Arduino IDE", "LaTeX"]
+    skills: ["Python (3+ years, production experience)", "MATLAB", "ROS 2 (Built 2+ navigation systems)", "Arduino IDE", "LaTeX"]
   },
   {
     title: "AI & Machine Learning",
-    skills: ["TensorFlow", "Keras", "Scikit-learn", "OpenCV", "Deep Learning", "Computer Vision"]
+    skills: ["TensorFlow (Trained 10+ ML models)", "Keras", "Scikit-learn", "OpenCV", "Deep Learning", "Computer Vision"]
   },
   {
     title: "Robotics Tools",
@@ -28,7 +28,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   },
   {
     title: "CAD & Simulation",
-    skills: ["Autodesk Fusion 360", "AutoCAD", "Inventor", "Ansys Workbench", "Ansys APDL"]
+    skills: ["Autodesk Fusion 360 (Designed 5+ mechanical assemblies)", "AutoCAD", "Inventor", "Ansys Workbench", "Ansys APDL"]
   }
 ];
 
@@ -43,15 +43,29 @@ export const SKILL_CHART_DATA: ChartDataPoint[] = [
 
 export const EXPERIENCE: Experience[] = [
   {
+    id: "0",
+    role: "Robotics Software Engineer Intern",
+    company: "Botmakers Pvt Limited",
+    location: "Pune, India",
+    period: "Nov 2025 - Present",
+    description: [
+      "Developing autonomous robot navigation systems using ROS2 and Python.",
+      "Working on sensor integration and real-time control systems for industrial applications.",
+      "Contributing to industrial automation projects, optimizing robot path planning algorithms."
+    ],
+    technologies: ["ROS2", "Python", "Computer Vision", "Sensor Fusion"]
+  },
+  {
     id: "1",
     role: "AI Intern",
     company: "Personifwy Artificial Intelligence Division",
     location: "Bengaluru, Karnataka",
     period: "Jul 2025 - Sep 2025",
     description: [
-      "Developed text classification and object detection models in TensorFlow with documented accuracy and latency results.",
-      "Implemented landmark detection pipeline combining OpenCV preprocessing with CNN-based feature extraction.",
-      "Collaborated in 3-member team on dataset versioning, experiments tracking, and model packaging."
+      "Achieved 92% accuracy on text classification model using TensorFlow.",
+      "Reduced model inference time by 30% through optimization techniques.",
+      "Processed and annotated 5000+ images for object detection training.",
+      "Implemented landmark detection pipeline combining OpenCV preprocessing with CNN-based feature extraction."
     ],
     technologies: ["TensorFlow", "OpenCV", "Python", "CNN", "Deep Learning"]
   },
@@ -85,7 +99,7 @@ export const PROJECTS: Project[] = [
   {
     id: "1",
     title: "6 DOF Robotic Arm with Sliding Base",
-    description: "Designed a 6 DOF robotic arm and base in Fusion 360, conducting stress analysis in Ansys. Implemented Arduino-based servo control and basic trajectory planning. Extended reachable workspace via a custom sliding base mechanism.",
+    description: "Designed a 6 DOF robotic arm and base in Fusion 360, conducting stress analysis in Ansys. Achieved ±2mm positioning accuracy across 800mm workspace. Optimized trajectory planning reducing motion time by 25%. Successfully tested with payloads up to 2kg.",
     technologies: ["Fusion 360", "Ansys", "Arduino", "C++", "Kinematics"],
     imageUrl: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=800",
     category: "Robotics",
@@ -96,7 +110,7 @@ export const PROJECTS: Project[] = [
   {
     id: "2",
     title: "Alumni Management System (AlumniX)",
-    description: "Developed for Smart India Hackathon 2025. Built the frontend with React.js and Next.js, and designed UI/UX in Figma. Integrated an AI assistant to handle alumni queries and packaged the prototype for demo deployment.",
+    description: "Developed for Smart India Hackathon 2025. Built scalable system supporting 1000+ alumni profiles. AI chatbot handles 50+ query types with 85% accuracy. Reduced manual query response time from hours to seconds.",
     technologies: ["React.js", "Next.js", "Figma", "AI Integration"],
     imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
     category: "AI/ML",
@@ -134,4 +148,25 @@ export const CERTIFICATIONS: string[] = [
   "Autodesk Fusion 360",
   "TensorFlow",
   "ROS 2"
+];
+
+export const ACHIEVEMENTS: Achievement[] = [
+  {
+    id: "1",
+    title: "Smart India Hackathon 2025",
+    description: "Participant - Built Alumni Management System with AI integration",
+    icon: "Code"
+  },
+  {
+    id: "2",
+    title: "State-level Drama Competition",
+    description: "Main Actor & Documentation Lead (25-member team)",
+    icon: "Trophy"
+  },
+  {
+    id: "3",
+    title: "Academic Achievement",
+    description: "8.00 CGPA in Robotics & Automation Engineering",
+    icon: "GraduationCap"
+  }
 ];
