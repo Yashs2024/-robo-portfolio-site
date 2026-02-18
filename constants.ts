@@ -16,29 +16,29 @@ export const PERSONAL_INFO = {
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: "Programming",
-    skills: ["Python (3+ years, production experience)", "MATLAB", "ROS 2 (Built 2+ navigation systems)", "Arduino IDE", "LaTeX"]
+    skills: ["Python (3+ years, production experience)", "C++ (Embedded)", "ROS 2 (Humble/Foxy)", "MATLAB", "LaTeX"]
   },
   {
     title: "AI & Machine Learning",
-    skills: ["TensorFlow (Trained 10+ ML models)", "Keras", "Scikit-learn", "OpenCV", "Deep Learning", "Computer Vision"]
+    skills: ["MediaPipe (Gesture Control)", "TensorFlow", "OpenCV (Computer Vision)", "Google AI Studio", "Deep Learning"]
   },
   {
-    title: "Robotics Tools",
-    skills: ["Gazebo", "RViz2", "ROS 2 Packages", "Navigation Stack"]
+    title: "Robotics & Hardware",
+    skills: ["ESP32/NodeMCU", "Inverse Kinematics", "Gazebo Sim", "PCB Design", "LiPo Battery Safety"]
   },
   {
-    title: "CAD & Simulation",
-    skills: ["Autodesk Fusion 360 (Designed 5+ mechanical assemblies)", "AutoCAD", "Inventor", "Ansys Workbench", "Ansys APDL"]
+    title: "CAD & Prototyping",
+    skills: ["Autodesk Fusion 360 (Advanced Surface Modeling)", "DFM (3D Printing)", "Ansys Workbench", "Tolerance Analysis"]
   }
 ];
 
 export const SKILL_CHART_DATA: ChartDataPoint[] = [
   { subject: 'ROS 2', A: 90, fullMark: 100 },
   { subject: 'Python', A: 95, fullMark: 100 },
-  { subject: 'TensorFlow', A: 85, fullMark: 100 },
-  { subject: 'Fusion 360', A: 90, fullMark: 100 },
-  { subject: 'Comp Vision', A: 80, fullMark: 100 },
-  { subject: 'Arduino', A: 90, fullMark: 100 },
+  { subject: 'Fusion 360', A: 95, fullMark: 100 },
+  { subject: 'Embedded C', A: 85, fullMark: 100 },
+  { subject: 'Comp Vision', A: 85, fullMark: 100 },
+  { subject: 'Kinematics', A: 80, fullMark: 100 },
 ];
 
 export const EXPERIENCE: Experience[] = [
@@ -49,11 +49,12 @@ export const EXPERIENCE: Experience[] = [
     location: "Pune, India",
     period: "Nov 2025 - Present",
     description: [
-      "Developing autonomous robot navigation systems using ROS2 and Python.",
-      "Working on sensor integration and real-time control systems for industrial applications.",
-      "Contributing to industrial automation projects, optimizing robot path planning algorithms."
+      "Engineered 'Sesame Quadruped', a research-grade 8-DOF robot under ₹4,000 using ESP32-S2 and custom Inverse Kinematics engine.",
+      "Led technical workshops at IIT Bombay Techfest 2025 and PCCOE Akurdi, mentoring 500+ students in Drone fabrication and IoT.",
+      "Designed and deployed a low-cost (<₹500) IoT educational kit and comprehensive drone curriculum (DGCA regulations, PID tuning).",
+      "Developed 'Physical AI' systems combining MediaPipe gesture tracking with UDP communication for real-time robot control."
     ],
-    technologies: ["ROS2", "Python", "Computer Vision", "Sensor Fusion"]
+    technologies: ["Fusion 360", "Inverse Kinematics", "ESP32", "MediaPipe", "Public Speaking"]
   },
   {
     id: "1",
@@ -97,24 +98,53 @@ export const EXPERIENCE: Experience[] = [
 
 export const PROJECTS: Project[] = [
   {
-    id: "1",
+    id: "p1",
+    title: "Sesame Quadruped (8-DOF)",
+    description: "A low-cost, research-grade quadruped robot. Designed a monocoque chassis in Fusion 360 with internal cable routing. Developed a custom Inverse Kinematics (IK) engine in C++ running on ESP32-S2 to calculate Hip and Knee angles in real-time.",
+    technologies: ["Fusion 360", "C++", "Inverse Kinematics", "ESP32", "3D Printing"],
+    imageUrl: "https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?auto=format&fit=crop&q=80&w=800",
+    category: "Robotics",
+    featured: true,
+    githubUrl: "#"
+  },
+  {
+    id: "p2",
+    title: "AI-Controlled Biomimetic Hand",
+    description: "An anthropomorphic robotic hand controlled via human gestures. Used MediaPipe for hand tracking and UDP for low-latency communication to NodeMCU. Designed an underactuated tendon system using fishing lines (flexors) and elastic threads (extensors).",
+    technologies: ["Python", "MediaPipe", "OpenCV", "UDP", "IoT"],
+    imageUrl: "https://images.unsplash.com/photo-1581092921461-eab62e97a782?auto=format&fit=crop&q=80&w=800",
+    category: "AI/ML",
+    featured: true,
+    githubUrl: "#"
+  },
+  {
+    id: "p3",
+    title: "Google AI Studio Simulations",
+    description: "Developed browser-based interactive simulations including a 3D Virtual RoboHand that visualizes Forward Kinematics in real-time and a Gesture Solar System. Leveraged Google AI Studio to create 'Physical AI' experiences without hardware constraints.",
+    technologies: ["Google AI Studio", "JavaScript", "Kinematics", "Gesture Control"],
+    imageUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800",
+    category: "AI/ML",
+    featured: true,
+    githubUrl: "#"
+  },
+  {
+    id: "p4",
     title: "6 DOF Robotic Arm with Sliding Base",
     description: "Designed a 6 DOF robotic arm and base in Fusion 360, conducting stress analysis in Ansys. Achieved ±2mm positioning accuracy across 800mm workspace. Optimized trajectory planning reducing motion time by 25%. Successfully tested with payloads up to 2kg.",
     technologies: ["Fusion 360", "Ansys", "Arduino", "C++", "Kinematics"],
     imageUrl: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=800",
     category: "Robotics",
-    featured: true,
-    githubUrl: "#",
-    demoUrl: "#"
+    featured: false,
+    githubUrl: "#"
   },
   {
-    id: "2",
+    id: "p5",
     title: "Alumni Management System (AlumniX)",
     description: "Developed for Smart India Hackathon 2025. Built scalable system supporting 1000+ alumni profiles. AI chatbot handles 50+ query types with 85% accuracy. Reduced manual query response time from hours to seconds.",
     technologies: ["React.js", "Next.js", "Figma", "AI Integration"],
     imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
     category: "AI/ML",
-    featured: true,
+    featured: false,
     githubUrl: "#"
   }
 ];
@@ -147,7 +177,8 @@ export const CERTIFICATIONS: string[] = [
   "Advanced Python",
   "Autodesk Fusion 360",
   "TensorFlow",
-  "ROS 2"
+  "ROS 2",
+  "Battery Safety (LiPo)"
 ];
 
 export const ACHIEVEMENTS: Achievement[] = [
