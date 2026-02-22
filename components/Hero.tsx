@@ -3,6 +3,8 @@ import { ArrowRight, Download, MapPin, Terminal } from 'lucide-react';
 import { PERSONAL_INFO } from '../constants';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
+import DownloadResume from './DownloadResume';
+
 const Hero: React.FC = () => {
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 1000], [0, 500]);
@@ -84,26 +86,19 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4"
+          className="flex flex-col sm:flex-row gap-4 items-center"
         >
           <a
             href="#projects"
-            className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-sm text-space-950 bg-neon-400 hover:bg-neon-500 md:text-lg transition-all shadow-[0_0_20px_rgba(0,242,255,0.3)] hover:shadow-[0_0_30px_rgba(0,242,255,0.5)] skew-x-[-10deg]"
+            className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-sm text-space-950 bg-neon-400 hover:bg-neon-500 md:text-lg transition-all shadow-[0_0_20px_rgba(0,242,255,0.3)] hover:shadow-[0_0_30px_rgba(0,242,255,0.5)] skew-x-[-10deg] min-w-[240px]"
           >
             <span className="skew-x-[10deg] flex items-center">
               View Protocols
               <ArrowRight className="ml-2 h-5 w-5" />
             </span>
           </a>
-          <a
-            href={PERSONAL_INFO.resumeLink}
-            className="inline-flex items-center justify-center px-8 py-3 border border-neon-400/50 text-base font-medium rounded-sm text-neon-400 bg-transparent hover:bg-neon-900/10 md:text-lg transition-all backdrop-blur-sm skew-x-[-10deg]"
-          >
-             <span className="skew-x-[10deg] flex items-center">
-              Download Data
-              <Download className="ml-2 h-5 w-5" />
-             </span>
-          </a>
+          
+          <DownloadResume />
         </motion.div>
       </motion.div>
     </section>
