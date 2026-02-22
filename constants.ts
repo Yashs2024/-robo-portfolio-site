@@ -10,7 +10,8 @@ export const PERSONAL_INFO = {
   phone: "+91 79723 08355",
   github: "https://github.com/Yashs2024", 
   linkedin: "https://www.linkedin.com/in/yash-surve-3b6a72253",
-  resumeLink: "/resume.pdf" 
+  resumeLink: "/resume.pdf",
+  profileImage: "/profile.jpg"
 };
 
 export const SKILL_CATEGORIES: SkillCategory[] = [

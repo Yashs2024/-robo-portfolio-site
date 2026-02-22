@@ -16,13 +16,13 @@ const About: React.FC = () => {
             viewport={{ once: true }}
             className="md:col-span-4 flex justify-center md:justify-start"
           >
-            <div className="relative w-64 h-64 md:w-full md:h-auto aspect-square rounded-2xl overflow-hidden border-2 border-cyan-500/30 shadow-[0_0_30px_rgba(34,211,238,0.15)] group">
+            <div className="relative w-64 md:w-full max-w-sm mx-auto aspect-[3/4] rounded-2xl overflow-hidden border-2 border-cyan-500/30 shadow-[0_0_30px_rgba(34,211,238,0.15)] group">
               <img 
-                src="https://picsum.photos/600/600?grayscale" 
+                src={PERSONAL_INFO.profileImage} 
                 alt={PERSONAL_INFO.name} 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110"
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/80 to-transparent pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/60 to-transparent pointer-events-none"></div>
             </div>
           </motion.div>
 
