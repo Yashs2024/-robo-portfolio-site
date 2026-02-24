@@ -1,9 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PERSONAL_INFO } from '../constants';
 import { motion } from 'framer-motion';
-import { User, Target, Cpu } from 'lucide-react';
+import { User, Target, Cpu, Send, Mail, Check, Loader2 } from 'lucide-react';
 
 const About: React.FC = () => {
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+    
+    // Construct mailto link
+    const subject = `Portfolio Contact from ${formData.name}`;
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+    const mailtoLink = `mailto:${PERSONAL_INFO.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+
+    setTimeout(() => {
+      setFormStatus('success');
+      setTimeout(() => {
+        setFormStatus('idle');
+        setFormData({ name: '', email: '', message: '' });
+      }, 3000);
+    }, 1000);
+  };
+
   return (
     <section id="about" className="py-20 bg-slate-900 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -43,7 +75,7 @@ const About: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                 <motion.div 
                   whileHover={{ scale: 1.02 }}
                   className="bg-slate-800/50 p-4 rounded-lg border border-slate-700 transition-colors hover:border-cyan-500/30"
@@ -70,6 +102,72 @@ const About: React.FC = () => {
                     </p>
                 </motion.div>
             </div>
+
+            {/* Quick Contact Form */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-slate-800/30 p-6 rounded-xl border border-slate-700/50 backdrop-blur-sm"
+            >
+                <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                    <Mail className="w-4 h-4 text-cyan-400" />
+                    Quick Message
+                </h3>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input 
+                            type="text" 
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            placeholder="Name" 
+                            required
+                            className="bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-cyan-500 transition-colors"
+                        />
+                        <input 
+                            type="email" 
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            placeholder="Email" 
+                            required
+                            className="bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-cyan-500 transition-colors"
+                        />
+                    </div>
+                    <textarea 
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Your message..." 
+                        rows={3} 
+                        required
+                        className="w-full bg-slate-900/50 border border-slate-700 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-cyan-500 transition-colors resize-none"
+                    ></textarea>
+                    <button 
+                        type="submit" 
+                        disabled={formStatus !== 'idle'}
+                        className="flex items-center gap-2 px-6 py-2 bg-cyan-500/10 text-cyan-400 border border-cyan-500/50 rounded-lg hover:bg-cyan-500/20 transition-all text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        {formStatus === 'submitting' ? (
+                            <>
+                                <Loader2 className="w-4 h-4 animate-spin" />
+                                Sending...
+                            </>
+                        ) : formStatus === 'success' ? (
+                            <>
+                                <Check className="w-4 h-4" />
+                                Sent!
+                            </>
+                        ) : (
+                            <>
+                                <Send className="w-4 h-4" />
+                                Send Message
+                            </>
+                        )}
+                    </button>
+                </form>
+            </motion.div>
           </motion.div>
         </div>
       </div>
