@@ -34,8 +34,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 ];
 
 export const SKILL_CHART_DATA: ChartDataPoint[] = [
-  { subject: 'ROS 2', A: 90, fullMark: 100 },
-  { subject: 'Python', A: 95, fullMark: 100 },
+  { subject: 'ROS 2', A: 50, fullMark: 100 },
+  { subject: 'Python', A: 75, fullMark: 100 },
   { subject: 'Fusion 360', A: 95, fullMark: 100 },
   { subject: 'Embedded C', A: 85, fullMark: 100 },
   { subject: 'Comp Vision', A: 85, fullMark: 100 },

@@ -88,7 +88,7 @@ const DownloadResume: React.FC = () => {
                 exit={{ opacity: 0, y: -10 }}
                 className="flex items-center gap-2"
               >
-                <span>INITIATE_DOWNLOAD</span>
+                <span>DOWNLOAD RESUME</span>
                 <Download className="w-5 h-5" />
               </motion.div>
             )}

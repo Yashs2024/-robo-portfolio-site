@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Download, MapPin, Terminal } from 'lucide-react';
 import { PERSONAL_INFO } from '../constants';
 import { motion, useScroll, useTransform } from 'framer-motion';
-
+import RobotBackground from './RobotBackground';
 import DownloadResume from './DownloadResume';
+
+const TypingText: React.FC<{ text: string }> = ({ text }) => {
+  const [displayText, setDisplayText] = useState('');
+  
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      setDisplayText(text.substring(0, index));
+      index++;
+      if (index > text.length) {
+        clearInterval(interval);
+      }
+    }, 150);
+
+    return () => clearInterval(interval);
+  }, [text]);
+
+  return (
+    <span className="inline-block">
+      {displayText}
+      <motion.span 
+        animate={{ opacity: [0, 1, 0] }}
+        transition={{ repeat: Infinity, duration: 0.8 }}
+        className="text-neon-400 ml-1"
+      >
+        |
+      </motion.span>
+    </span>
+  );
+};
 
 const Hero: React.FC = () => {
   const { scrollY } = useScroll();
@@ -12,17 +42,16 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+      {/* 3D Robot Background */}
+      <RobotBackground />
+
       {/* Parallax Background Layer */}
       <motion.div 
         style={{ y: backgroundY }}
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 pointer-events-none"
       >
          {/* Subtle Gradient Overlay */}
         <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-[radial-gradient(circle_at_50%_50%,rgba(0,242,255,0.1),transparent_60%)]" />
-        
-        {/* Abstract Blobs */}
-        <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-neon-400/5 rounded-full blur-[120px] mix-blend-screen transform -translate-x-1/2" />
-        <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] mix-blend-screen transform translate-x-1/2" />
       </motion.div>
 
       {/* Content Layer */}
@@ -48,9 +77,9 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold font-tech tracking-tight text-white mb-6 drop-shadow-2xl"
+          className="text-4xl md:text-6xl lg:text-7xl font-bold font-tech tracking-tight text-white mb-6 drop-shadow-2xl h-20 md:h-24"
         >
-          {PERSONAL_INFO.name}
+          <TypingText text={PERSONAL_INFO.name} />
         </motion.h1>
 
         <motion.div
@@ -93,7 +122,7 @@ const Hero: React.FC = () => {
             className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-sm text-space-950 bg-neon-400 hover:bg-neon-500 md:text-lg transition-all shadow-[0_0_20px_rgba(0,242,255,0.3)] hover:shadow-[0_0_30px_rgba(0,242,255,0.5)] skew-x-[-10deg] min-w-[240px]"
           >
             <span className="skew-x-[10deg] flex items-center">
-              View Protocols
+              View Projects
               <ArrowRight className="ml-2 h-5 w-5" />
             </span>
           </a>

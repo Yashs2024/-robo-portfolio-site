@@ -7,7 +7,7 @@ import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Achievements from './components/Achievements';
-import Testimonials from './components/Testimonials';
+import PathfindingVisualizer from './components/PathfindingVisualizer';
 import Contact from './components/Contact';
 import CustomCursor from './components/CustomCursor';
 import { PERSONAL_INFO } from './constants';
@@ -26,7 +26,22 @@ const App: React.FC = () => {
         <Experience />
         <Achievements />
         <Projects />
-        <Testimonials />
+        
+        {/* Robotics Lab / Playground Section */}
+        <section className="py-20 bg-slate-900/50 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold font-tech text-white mb-4">
+                Robotics <span className="text-cyan-400">Lab</span>
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                Interactive demonstrations of algorithms and control systems.
+              </p>
+            </div>
+            <PathfindingVisualizer />
+          </div>
+        </section>
+
         <Contact />
       </main>
 
