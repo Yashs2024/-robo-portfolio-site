@@ -8,6 +8,7 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Achievements from './components/Achievements';
 import PathfindingVisualizer from './components/PathfindingVisualizer';
+import PIDTuner from './components/PIDTuner';
 import Contact from './components/Contact';
 import CustomCursor from './components/CustomCursor';
 import { PERSONAL_INFO } from './constants';
@@ -39,6 +40,7 @@ const App: React.FC = () => {
               </p>
             </div>
             <PathfindingVisualizer />
+            <PIDTuner />
           </div>
         </section>
 
