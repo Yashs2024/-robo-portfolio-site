@@ -99,6 +99,36 @@ export const EXPERIENCE: Experience[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: "p6",
+    title: "2D SLAM & LiDAR Simulator",
+    description: "A browser-based interactive simulator demonstrating Simultaneous Localization and Mapping (SLAM). Features a differential-drive robot equipped with a 2D LiDAR sensor that builds an occupancy grid map in real-time. Includes A* pathfinding, Gaussian sensor noise modeling, and a fog-of-war exploration effect.",
+    technologies: ["JavaScript", "HTML5 Canvas", "Chart.js", "Vite", "Algorithms"],
+    imageUrl: "https://raw.githubusercontent.com/Yashs2024/robotic-Slam-lidar-simulator/master/public/slam%20and%20lidar.png",
+    category: "Robotics",
+    featured: true,
+    githubUrl: "https://github.com/Yashs2024/robotic-Slam-lidar-simulator"
+  },
+  {
+    id: "p7",
+    title: "RoboArm Nexus",
+    description: "An industrial-grade robotic arm control suite built with React, MediaPipe, and Google Gemini. Features real-time hand tracking, 2-DOF Inverse Kinematics simulation, and AI-powered firmware generation for Python and Arduino.",
+    technologies: ["React", "MediaPipe", "Google Gemini", "Inverse Kinematics", "Python"],
+    imageUrl: "https://raw.githubusercontent.com/Yashs2024/roboarm-nexus/main/public/images/Screenshot%202026-03-07%20182401.png",
+    category: "Robotics",
+    featured: true,
+    githubUrl: "https://github.com/Yashs2024/roboarm-nexus"
+  },
+  {
+    id: "p8",
+    title: "RoboHand Simulator",
+    description: "A real-time 'Digital Twin' experiment that maps human hand gestures onto a 3D robotic model entirely in the browser. Built with React, Three.js, and Google's MediaPipe, creating a seamless bridge between optical hand tracking and WebGL visualization.",
+    technologies: ["React", "Three.js", "MediaPipe", "WebGL", "Computer Vision"],
+    imageUrl: "https://raw.githubusercontent.com/Yashs2024/robohand-simulator-with-OpenCV/main/public/Screenshot%202026-03-07%20180708.png",
+    category: "AI/ML",
+    featured: true,
+    githubUrl: "https://github.com/Yashs2024/robohand-simulator-with-OpenCV"
+  },
+  {
     id: "p1",
     title: "Sesame Quadruped (8-DOF)",
     description: "A low-cost, research-grade quadruped robot. Designed a monocoque chassis in Fusion 360 with internal cable routing. Developed a custom Inverse Kinematics (IK) engine in C++ running on ESP32-S2 to calculate Hip and Knee angles in real-time.",
@@ -113,17 +143,7 @@ export const PROJECTS: Project[] = [
     title: "AI-Controlled Biomimetic Hand",
     description: "An anthropomorphic robotic hand controlled via human gestures. Used MediaPipe for hand tracking and UDP for low-latency communication to NodeMCU. Designed an underactuated tendon system using fishing lines (flexors) and elastic threads (extensors).",
     technologies: ["Python", "MediaPipe", "OpenCV", "UDP", "IoT"],
-    imageUrl: "https://images.unsplash.com/photo-1581092921461-eab62e97a782?auto=format&fit=crop&q=80&w=800",
-    category: "AI/ML",
-    featured: true,
-    githubUrl: "#"
-  },
-  {
-    id: "p3",
-    title: "Google AI Studio Simulations",
-    description: "Developed browser-based interactive simulations including a 3D Virtual RoboHand that visualizes Forward Kinematics in real-time and a Gesture Solar System. Leveraged Google AI Studio to create 'Physical AI' experiences without hardware constraints.",
-    technologies: ["Google AI Studio", "JavaScript", "Kinematics", "Gesture Control"],
-    imageUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "https://raw.githubusercontent.com/Yashs2024/roboarm-nexus/main/public/images/Ai%20gestured%20controlled%20robohand.jpeg",
     category: "AI/ML",
     featured: true,
     githubUrl: "#"
@@ -133,7 +153,7 @@ export const PROJECTS: Project[] = [
     title: "6 DOF Robotic Arm with Sliding Base",
     description: "Designed a 6 DOF robotic arm and base in Fusion 360, conducting stress analysis in Ansys. Achieved ±2mm positioning accuracy across 800mm workspace. Optimized trajectory planning reducing motion time by 25%. Successfully tested with payloads up to 2kg.",
     technologies: ["Fusion 360", "Ansys", "Arduino", "C++", "Kinematics"],
-    imageUrl: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "https://www.okystar.com/wp-content/uploads/2018/08/square-base-manipulator-5.jpg",
     category: "Robotics",
     featured: false,
     githubUrl: "#"
