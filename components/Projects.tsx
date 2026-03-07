@@ -17,10 +17,22 @@ const Projects: React.FC = () => {
     <section id="projects" className="py-20 bg-slate-850/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-tech text-white mb-4">
+          <motion.h2 
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold font-tech text-white mb-4"
+          >
             Featured <span className="text-cyan-400">Projects</span>
-          </h2>
-          <div className="flex justify-center gap-4 flex-wrap mt-8">
+          </motion.h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex justify-center gap-4 flex-wrap mt-8"
+          >
             {filters.map((f) => (
               <button
                 key={f}
@@ -34,7 +46,7 @@ const Projects: React.FC = () => {
                 {f}
               </button>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         <motion.div 

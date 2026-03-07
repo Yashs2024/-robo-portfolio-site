@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Github, Linkedin, Send, Phone } from 'lucide-react';
 import { PERSONAL_INFO } from '../constants';
+import { motion } from 'framer-motion';
 
 const Contact: React.FC = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
@@ -37,22 +38,48 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="py-20 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="bg-slate-900 rounded-2xl p-8 md:p-12 border border-slate-800 shadow-2xl relative overflow-hidden">
           {/* Background Glow */}
           <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
 
           <div className="text-center mb-10 relative z-10">
-            <h2 className="text-3xl font-bold font-tech text-white mb-4">Let's <span className="text-cyan-400">Connect</span></h2>
-            <p className="text-gray-400">
+            <motion.h2 
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold font-tech text-white mb-4"
+            >
+              Let's <span className="text-cyan-400">Connect</span>
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-gray-400"
+            >
               Interested in discussing robotics, automation, or potential collaborations?
-            </p>
+            </motion.p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
             {/* Contact Info */}
-            <div className="space-y-6">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
               <div>
                 <h3 className="text-lg font-medium text-white mb-2">Contact Information</h3>
                 <div className="space-y-4">
@@ -88,10 +115,17 @@ const Contact: React.FC = () => {
                   "The best way to predict the future is to invent it."
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <motion.form 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              onSubmit={handleSubmit} 
+              className="space-y-4"
+            >
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">Name</label>
                 <input
@@ -148,10 +182,10 @@ const Contact: React.FC = () => {
                    </>
                 )}
               </button>
-            </form>
+            </motion.form>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

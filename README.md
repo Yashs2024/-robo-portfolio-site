@@ -1,20 +1,86 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Yash Surve - Robotics & Automation Portfolio 🤖✨
 
-# Run and deploy your AI Studio app
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Threejs](https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer-Black?style=for-the-badge&logo=framer&logoColor=blue)
 
-This contains everything you need to run your app locally.
+Welcome to the source code of my personal portfolio website! As a Robotics & Automation Engineering student, I wanted to build a portfolio that doesn't just list my skills, but actively demonstrates my understanding of robotics concepts through interactive web technologies.
 
-View your app in AI Studio: https://ai.studio/apps/73ea51ff-8749-481e-85a8-24e13919e29e
+🌐 **Live Site:** [Insert Live URL Here]
 
-## Run Locally
+## 🚀 Key Features
 
-**Prerequisites:**  Node.js
+Beyond standard portfolio sections (About, Experience, Projects), this site features a custom **Robotics Lab** with interactive simulations:
 
+*   **Interactive PID Controller Tuner:** A real-time physics simulation of a drone hovering. Users can tune Proportional (Kp), Integral (Ki), and Derivative (Kd) gains to achieve stability, complete with a live response graph and disturbance testing.
+*   **Pathfinding Visualizer:** An interactive grid demonstrating Dijkstra's Algorithm. Users can draw walls, move the start/target nodes, and watch the algorithm find the shortest path in real-time.
+*   **3D Hero Section:** An immersive, interactive 3D background powered by `@react-three/fiber` and `@react-three/drei`.
+*   **Dynamic Skills Radar:** A responsive radar chart visualizing proficiency across different engineering disciplines (ROS 2, Python, CAD, etc.).
+*   **Cyberpunk/Tech Aesthetic:** Custom typing animations, glitch effects, and a custom cursor to match the robotics theme.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🛠️ Tech Stack
+
+*   **Frontend Framework:** React 18
+*   **Language:** TypeScript
+*   **Styling:** Tailwind CSS
+*   **Animations:** Framer Motion
+*   **3D Rendering:** Three.js, React Three Fiber
+*   **Data Visualization:** Recharts
+*   **Icons:** Lucide React
+*   **Build Tool:** Vite
+
+## 💻 Getting Started
+
+To run this project locally on your machine:
+
+### Prerequisites
+*   Node.js (v18 or higher recommended)
+*   npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Yashs2024/portfolio.git
+   cd portfolio
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:3000` (or the port specified in your terminal).
+
+## 📁 Project Structure
+
+```text
+├── src/
+│   ├── components/       # Reusable UI components (Hero, About, Projects, etc.)
+│   │   ├── PIDTuner.tsx  # Interactive PID simulation
+│   │   ├── PathfindingVisualizer.tsx # Dijkstra algorithm visualizer
+│   │   └── ...
+│   ├── constants.ts      # Centralized data (Projects, Experience, Skills)
+│   ├── types.ts          # TypeScript interfaces and types
+│   ├── App.tsx           # Main application component
+│   └── main.tsx          # Entry point
+├── public/               # Static assets (images, resume, 3D models)
+├── tailwind.config.js    # Tailwind CSS configuration
+└── package.json          # Project dependencies and scripts
+```
+
+## 📬 Contact
+
+*   **Email:** yashusurve2005@gmail.com
+*   **LinkedIn:** [Yash Surve](https://www.linkedin.com/in/yash-surve-3b6a72253)
+*   **GitHub:** [@Yashs2024](https://github.com/Yashs2024)
+
+---
+*Designed and built by Yash Surve.*
