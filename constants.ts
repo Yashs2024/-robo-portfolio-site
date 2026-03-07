@@ -1,4 +1,6 @@
 import { Project, Experience, Education, SkillCategory, ChartDataPoint, Achievement } from './types';
+import profileImg from './assets/profile.jpg';
+import resumePdf from './assets/resume.pdf';
 
 export const PERSONAL_INFO = {
   name: "Yash Surve",
@@ -10,8 +12,8 @@ export const PERSONAL_INFO = {
   phone: "+91 79723 08355",
   github: "https://github.com/Yashs2024", 
   linkedin: "https://www.linkedin.com/in/yash-surve-3b6a72253",
-  resumeLink: "/resume.pdf",
-  profileImage: "/profile.jpg"
+  resumeLink: resumePdf,
+  profileImage: profileImg
 };
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
