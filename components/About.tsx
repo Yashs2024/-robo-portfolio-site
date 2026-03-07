@@ -52,7 +52,7 @@ const About: React.FC = () => {
               <img 
                 src={PERSONAL_INFO.profileImage} 
                 alt={PERSONAL_INFO.name} 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+                className="w-full h-full object-cover transition-all duration-500 scale-100 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/60 to-transparent pointer-events-none"></div>
             </div>

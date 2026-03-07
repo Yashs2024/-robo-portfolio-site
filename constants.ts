@@ -1,5 +1,4 @@
 import { Project, Experience, Education, SkillCategory, ChartDataPoint, Achievement } from './types';
-import profileImg from './assets/profile.jpg';
 import resumePdf from './assets/resume.pdf';
 
 export const PERSONAL_INFO = {
@@ -13,7 +12,7 @@ export const PERSONAL_INFO = {
   github: "https://github.com/Yashs2024", 
   linkedin: "https://www.linkedin.com/in/yash-surve-3b6a72253",
   resumeLink: resumePdf,
-  profileImage: profileImg
+  profileImage: "https://raw.githubusercontent.com/Yashs2024/-robo-portfolio-site/main/assets/profilee.jpg"
 };
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
