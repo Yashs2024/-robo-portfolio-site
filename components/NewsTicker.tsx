@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { GoogleGenAI, Type } from '@google/genai';
 import { Newspaper, Activity } from 'lucide-react';
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const apiKey = process.env.GEMINI_API_KEY || '';
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 interface NewsItem {
   headline: string;
@@ -15,6 +16,12 @@ const NewsTicker: React.FC = () => {
 
   useEffect(() => {
     const fetchNews = async () => {
+      if (!ai) {
+        console.warn('GEMINI_API_KEY is missing. News feed disabled.');
+        setLoading(false);
+        return;
+      }
+
       try {
         setLoading(true);
         const response = await ai.models.generateContent({
